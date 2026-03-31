@@ -217,14 +217,10 @@ app/
  ├─ main.py        # API FastAPI
  └─ validator.py   # Lógica de validação do boleto
 
-assets/            # Capturas de tela usadas no README
-docs/              # Documentacao das analises e ajustes
-
 scripts.ps1        # Automação de build e deploy
 Dockerfile         # Container da aplicação
 requirements.txt   # Dependencias Python do projeto
-.gitignore         # Regras de arquivos/pastas nao essenciais
-README.md
+
 ```
 
 ---

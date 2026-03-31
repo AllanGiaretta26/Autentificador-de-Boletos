@@ -18,6 +18,18 @@ class BoletoResponse(BaseModel):
     dados: dict | None = None
     mensagem: str | None = None
 
+
+@app.get("/")
+async def root():
+    # Endpoint raiz simples para evitar 404 e indicar como usar o serviço.
+    return {
+        "mensagem": "Boleto Verifier Service está em execução.",
+        "docs_url": "/docs",
+        "health_url": "/health",
+        "validar_boleto_url": "/validar-boleto"
+    }
+
+
 @app.post("/validar-boleto", response_model=BoletoResponse)
 async def validar(request: BoletoRequest):
     # Normaliza e valida a linha digitável via regras do boleto.

@@ -1,6 +1,40 @@
-echo "__pycache__/
-*.pyc
+# Python cache e bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais locais
+.venv/
 venv/
+env/
+ENV/
+
+# Arquivos de ambiente/segredos locais
 .env
+.env.*
+!.env.example
+
+# Logs e artefatos de execucao
+*.log
+*.pid
+
+# Cobertura, testes e cache de ferramentas
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Artefatos de build/distribuicao Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Configuracoes locais de IDE/editor
 .vscode/
-*.log" > .gitignore
+.idea/
+
+# Documentacao do projeto
+docs/

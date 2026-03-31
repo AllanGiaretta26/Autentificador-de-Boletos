@@ -1,5 +1,26 @@
 # Boleto Verifier Service
 
+---
+
+# Assets
+
+Abaixo estao algumas capturas de tela que mostram o fluxo do projeto em ambiente real (container + testes de API):
+
+1. **API em execucao no container:**  
+   Mostra o container ativo com o Uvicorn inicializado e a aplicacao pronta para receber requisicoes HTTP.
+
+   ![API em execucao no container](assets/Captura%20de%20tela%202026-03-31%20130205.png)
+
+2. **Teste de endpoints da API:**  
+   Exibe o teste de chamada HTTP para validacao, comprovando o retorno da API durante a execucao.
+
+   ![Teste de endpoints da API](assets/Captura%20de%20tela%202026-03-31%20130234.png)
+
+3. **Execucao inicial da API:**  
+   Registra a etapa de inicializacao do servico, com o servidor em estado pronto para atendimento.
+
+   ![Execucao inicial da API](assets/Captura%20de%20tela%202026-03-31%20104240.png)
+
 API para **validação e autenticação de boletos bancários brasileiros**, construída com **FastAPI** e preparada para execução em **Docker** e deploy no **Azure**.
 
 O serviço valida a linha digitável de boletos, verifica os dígitos verificadores e extrai informações relevantes como banco, valor e data de vencimento.
@@ -196,8 +217,13 @@ app/
  ├─ main.py        # API FastAPI
  └─ validator.py   # Lógica de validação do boleto
 
+assets/            # Capturas de tela usadas no README
+docs/              # Documentacao das analises e ajustes
+
 scripts.ps1        # Automação de build e deploy
 Dockerfile         # Container da aplicação
+requirements.txt   # Dependencias Python do projeto
+.gitignore         # Regras de arquivos/pastas nao essenciais
 README.md
 ```
 
@@ -207,27 +233,11 @@ README.md
 
 * Python
 * FastAPI
+* Uvicorn
+* Pydantic
+* python-dateutil
 * Docker
+* PowerShell
+* Azure CLI
 * Azure Container Instances
 * Azure Container Registry
-
----
-
-# Assets
-
-Abaixo estão algumas capturas de tela ilustrando o funcionamento do projeto:
-
-1. **Execução inicial da API:**  
-   A imagem mostra a inicialização da aplicação FastAPI no terminal, indicando que o servidor está pronto para receber requisições.
-
-   ![Execucao inicial da API](assets/Captura%20de%20tela%202026-03-31%20104240.png)
-
-2. **API em execução no container:**  
-   Aqui vemos que a API está rodando dentro de um container Docker, com logs mostrando o acesso ao endpoint raiz `/` e o container ativo.
-
-   ![API em execucao no container](assets/Captura%20de%20tela%202026-03-31%20130205.png)
-
-3. **Teste de endpoints da API:**  
-   Esta captura exibe uma chamada de teste ao endpoint utilizando uma ferramenta de requisições HTTP, demonstrando uma resposta bem-sucedida da API.
-
-   ![Teste de endpoints da API](assets/Captura%20de%20tela%202026-03-31%20130234.png)

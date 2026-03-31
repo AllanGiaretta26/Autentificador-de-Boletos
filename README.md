@@ -1,5 +1,9 @@
 # Boleto Verifier Service
 
+API para **validação e autenticação de boletos bancários brasileiros**, construída com **FastAPI** e preparada para execução em **Docker** e deploy no **Azure**.
+
+O serviço valida a linha digitável de boletos, verifica os dígitos verificadores e extrai informações relevantes como banco, valor e data de vencimento.
+
 ---
 
 # Assets
@@ -20,10 +24,6 @@ Abaixo estao algumas capturas de tela que mostram o fluxo do projeto em ambiente
    Registra a etapa de inicializacao do servico, com o servidor em estado pronto para atendimento.
 
    ![Execucao inicial da API](assets/Captura%20de%20tela%202026-03-31%20104240.png)
-
-API para **validação e autenticação de boletos bancários brasileiros**, construída com **FastAPI** e preparada para execução em **Docker** e deploy no **Azure**.
-
-O serviço valida a linha digitável de boletos, verifica os dígitos verificadores e extrai informações relevantes como banco, valor e data de vencimento.
 
 ---
 

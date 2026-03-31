@@ -237,3 +237,7 @@ requirements.txt   # Dependencias Python do projeto
 * Azure CLI
 * Azure Container Instances
 * Azure Container Registry
+
+# Autor
+Desenvolvido por Allan Giaretta.
+

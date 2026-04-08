@@ -90,3 +90,6 @@ Conectado ao repositório GitHub via Azure Portal. Deploy automático a cada pus
 ## Aprendizados
 
 Projeto desenvolvido para aprender na prática: arquitetura REST com .NET, containerização com Docker e deploy na nuvem com Azure.
+
+## Autor
+Desenvolvido por Allan Giaretta.

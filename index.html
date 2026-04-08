@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Boleto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Verificador de Boleto</h1>
+            <p>Digite o código de barras para verificar e enviar o boleto</p>
+        </header>
+
+        <main>
+            <form id="boleto-form">
+                <div class="form-group">
+                    <label for="codigo-barras">Código de Barras</label>
+                    <input 
+                        type="text" 
+                        id="codigo-barras" 
+                        name="codigo-barras" 
+                        placeholder="Digite os 47 ou 48 dígitos do código de barras"
+                        maxlength="48"
+                        required
+                    >
+                    <span id="codigo-error" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail de Destino</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="exemplo@email.com"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="btn-enviar">Enviar Boleto</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Verificador de Boleto. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

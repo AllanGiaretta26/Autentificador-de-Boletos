@@ -1,40 +1,25 @@
-# Python cache e bytecode
-__pycache__/
-*.py[cod]
-*$py.class
+# .NET
+boleto-verifier-api/bin/
+boleto-verifier-api/obj/
+boleto-verifier-api/*.user
+boleto-verifier-api/.vs/
 
-# Ambientes virtuais locais
-.venv/
-venv/
-env/
-ENV/
-
-# Arquivos de ambiente/segredos locais
+# Segredos — NUNCA subir para o Git
+boleto-verifier-api/appsettings.Development.json
 .env
-.env.*
-!.env.example
 
-# Logs e artefatos de execucao
+# Docker
+boleto-verifier-api/Properties/launchSettings.json
+
+# Logs
 *.log
-*.pid
+logs.zip
 
-# Cobertura, testes e cache de ferramentas
-.coverage
-.coverage.*
-htmlcov/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+# Sistema operacional
+.DS_Store
+Thumbs.db
 
-# Artefatos de build/distribuicao Python
-build/
-dist/
-*.egg-info/
-.eggs/
-
-# Configuracoes locais de IDE/editor
-.vscode/
-.idea/
-
-# Documentacao do projeto
+# Outros
+annotations/
 docs/
+boleto-verifier-def.sln

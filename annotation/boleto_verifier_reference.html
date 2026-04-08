@@ -1,0 +1,148 @@
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.wrap { padding: 1rem 0; display: flex; flex-direction: column; gap: 1.5rem; }
+.section { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+.section-header { padding: 0.75rem 1.25rem; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; gap: 10px; }
+.section-header span { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+.badge { font-size: 11px; padding: 2px 8px; border-radius: var(--border-radius-md); font-weight: 500; }
+.badge-blue { background: #E6F1FB; color: #0C447C; }
+.badge-teal { background: #E1F5EE; color: #085041; }
+.badge-amber { background: #FAEEDA; color: #633806; }
+.badge-purple { background: #EEEDFE; color: #3C3489; }
+.items { display: flex; flex-direction: column; }
+.item { display: grid; grid-template-columns: 200px 1fr; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.item:last-child { border-bottom: none; }
+.item-label { padding: 0.6rem 1.25rem; font-size: 13px; font-weight: 500; color: var(--color-text-primary); border-right: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); display: flex; align-items: flex-start; padding-top: 0.7rem; }
+.item-desc { padding: 0.6rem 1.25rem; font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-tertiary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+.cmd-list { display: flex; flex-direction: column; gap: 0; }
+.cmd-item { padding: 0.5rem 1.25rem; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 13px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.6; }
+.cmd-item:last-child { border-bottom: none; }
+.cmd-code { font-family: var(--font-mono); font-size: 12px; color: #0C447C; white-space: nowrap; flex-shrink: 0; padding-top: 1px; }
+.cmd-desc { color: var(--color-text-secondary); }
+</style>
+
+<div class="wrap">
+
+  <div class="section">
+    <div class="section-header">
+      <span>Pacotes instalados</span>
+      <span class="badge badge-teal">NuGet</span>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-label">Swashbuckle.AspNetCore</div>
+        <div class="item-desc">Gera a interface do <strong>Swagger</strong> automaticamente a partir dos seus Controllers. Permite testar os endpoints direto no navegador sem precisar do Postman.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">MailKit</div>
+        <div class="item-desc">Biblioteca para envio de e-mails via <strong>SMTP</strong>. Mais robusta que o <code>SmtpClient</code> nativo do .NET — suporta TLS, autenticação OAuth e envio assíncrono.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span>Conceitos do .NET utilizados</span>
+      <span class="badge badge-blue">.NET / C#</span>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-label">Injeção de dependência</div>
+        <div class="item-desc">Padrão onde o .NET cria e entrega os objetos que uma classe precisa. Registrado com <code>AddScoped&lt;T&gt;()</code> no <code>Program.cs</code>.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">AddScoped</div>
+        <div class="item-desc">Define que uma nova instância do service é criada por requisição HTTP. Ideal para services que leem configuração ou fazem I/O.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">IConfiguration</div>
+        <div class="item-desc">Interface que lê configurações do <code>appsettings.json</code> e dos <strong>User Secrets</strong>. Usada no <code>EmailService</code> para buscar e-mail e senha.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">User Secrets</div>
+        <div class="item-desc">Armazena credenciais fora do código, no sistema operacional local. Nunca vai para o repositório Git. Acessado via <code>_config["Chave"]</code>.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">CORS</div>
+        <div class="item-desc">Política de segurança do navegador que bloqueia chamadas entre origens diferentes. Liberado na API com <code>AddCors()</code> e <code>UseCors()</code>.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">ApiController / Route</div>
+        <div class="item-desc">Atributos que transformam uma classe C# em um endpoint REST. <code>[Route("api/[controller]")]</code> define a URL automaticamente pelo nome da classe.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">async / await</div>
+        <div class="item-desc">Permite que a API não trave enquanto espera operações lentas (envio de e-mail, I/O). Método retorna <code>Task&lt;IActionResult&gt;</code> em vez de <code>IActionResult</code>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span>Comandos de terminal</span>
+      <span class="badge badge-amber">CLI</span>
+    </div>
+    <div class="cmd-list">
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet new webapi -n nome</span>
+        <span class="cmd-desc">Cria um novo projeto de API REST com template padrão.</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet run</span>
+        <span class="cmd-desc">Compila e inicia o servidor localmente.</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet run --launch-profile http</span>
+        <span class="cmd-desc">Inicia usando o perfil HTTP definido no <code>launchSettings.json</code>.</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet add package Nome</span>
+        <span class="cmd-desc">Instala um pacote NuGet no projeto (equivalente ao <code>npm install</code>).</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet user-secrets init</span>
+        <span class="cmd-desc">Habilita o armazenamento de segredos locais no projeto.</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet user-secrets set "Chave" "Valor"</span>
+        <span class="cmd-desc">Salva uma credencial segura fora do código-fonte.</span>
+      </div>
+      <div class="cmd-item">
+        <span class="cmd-code">dotnet dev-certs https --trust</span>
+        <span class="cmd-desc">Instala e confia no certificado HTTPS local gerado pelo .NET.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span>Conceitos de JavaScript utilizados</span>
+      <span class="badge badge-purple">JS</span>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-label">fetch API</div>
+        <div class="item-desc">Função nativa do navegador para fazer requisições HTTP. Substitui o antigo <code>XMLHttpRequest</code>. Retorna uma <code>Promise</code>.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">async / await</div>
+        <div class="item-desc">Permite escrever código assíncrono de forma linear, sem callbacks aninhados. O <code>await</code> pausa a execução até a <code>Promise</code> resolver.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">try / catch / finally</div>
+        <div class="item-desc">Trata erros em código assíncrono. O bloco <code>finally</code> executa sempre — usado para reabilitar o botão após o envio.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">JSON.stringify</div>
+        <div class="item-desc">Converte um objeto JavaScript em texto JSON para enviar no corpo da requisição HTTP.</div>
+      </div>
+      <div class="item">
+        <div class="item-label">response.json()</div>
+        <div class="item-desc">Converte a resposta da API (texto JSON) de volta para um objeto JavaScript.</div>
+      </div>
+    </div>
+  </div>
+
+</div>

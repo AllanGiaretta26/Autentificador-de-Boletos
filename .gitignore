@@ -20,6 +20,6 @@ logs.zip
 Thumbs.db
 
 # Outros
-annotations/
+annotation/
 docs/
 boleto-verifier-def.sln

@@ -1,5 +1,7 @@
 # boleto-verifier
 
+**🌐 Site online:** [Acessar o site](https://red-mushroom-0446f0b0f.2.azurestaticapps.net)
+
 Sistema web que lê o código de barras de um boleto bancário, extrai as informações e envia para um e-mail específico.
 
 ## Funcionalidades

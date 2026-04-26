@@ -9,7 +9,7 @@
 
 > Aplicação web que lê o código de barras de um boleto bancário, extrai banco, valor e vencimento, e envia as informações para um e-mail informado pelo usuário.
 
-**Site online:** [red-mushroom-0446f0b0f.2.azurestaticapps.net](https://red-mushroom-0446f0b0f.2.azurestaticapps.net)
+**API pausada:** [red-mushroom-0446f0b0f.2.azurestaticapps.net](https://red-mushroom-0446f0b0f.2.azurestaticapps.net)
 
 ---
 
